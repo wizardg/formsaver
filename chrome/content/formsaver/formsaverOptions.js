@@ -4,6 +4,8 @@
 //*  ported to Firefox 3.0 by stanley.chow@pobox.com
 //*************************************************
 
+Components.utils.import("resource://gre/modules/PlacesUIUtils.jsm");
+
 function savePrefs(){
 
   // We need to save any preferences set from the options window
