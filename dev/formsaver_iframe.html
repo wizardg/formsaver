@@ -23,9 +23,12 @@
       <tr>
         <td width="300">
           <form name="testform" id="testform">
+            <input type="hidden" name="iframe_hidden1" id="iframe_hidden1" value="default1" />
             <input type="password" name="testname"><label>Password
             field</label><br>
             <input type="text" name="test_iframe_email"><label>Text field</label><br>
+            <input type="text" name="test_iframe_disabled" disabled value="disabled"><label>Disabled</label><br>
+            <input type="text" name="test_iframe_readonly" readonly value="readonly"><label>ReadOnly</label><br>
             <br>
             <input type="checkbox" name="test_iframe_checkbox"><label>Checkbox 1, Group
             1</label><br>
@@ -76,10 +79,14 @@
           <!-- ######################## HERE IS THE test_iframe_ FIELDSET ####################### -->
           <form name="test_iframe_form_fieldset" id="test_iframe_form_fieldset">
             <fieldset>
-              <legend>FormSaver test_iframe_ - Fieldset</legend> <input type="password"
+              <legend>FormSaver test_iframe_ - Fieldset</legend>
+              <input type="hidden" name="iframe_hidden1_fieldset" id="iframe_hidden1_fieldset" value="default1" />
+              <input type="password"
               name="test_iframe_name_fieldset"><label>Password field</label><br>
               <input type="text" name="test_iframe_email_fieldset"><label>Text
               field</label><br>
+              <input type="text" name="test_iframe_disabled_fieldset" disabled value="disabled"><label>Disabled</label><br>
+              <input type="text" name="test_iframe_readonly_fieldset" readonly value="readonly"><label>ReadOnly</label><br>
               <br>
               <input type="checkbox" name=
               "test_iframe_checkbox_fieldset"><label>Checkbox 1, Group 1</label><br>

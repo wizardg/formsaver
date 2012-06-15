@@ -22,6 +22,7 @@
       <spacer height="5"/>
         <checkbox id="save-password" label="&savepasswordfields.label;" onclick="passwordWarnings();"/>
         <checkbox id="save-hidden" label="&savehiddenfields.label;"/>
+        <checkbox id="save-disabled" label="&savedisabledfields.label;"/>
         <checkbox id="ignore-blank" label="&ignoreblankfields.label;"/>
         <checkbox id="ignore-errors" label="&ignoreerrors.label;"/>
         <checkbox id="check-locations" label="&checklocationhref.label;"/>

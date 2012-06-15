@@ -17,6 +17,7 @@ function savePrefs(){
   // Gather the values of any prefs set
   var passwordCheckBox          = document.getElementById("save-password").checked;
   var saveHiddenFieldsCheckBox  = document.getElementById("save-hidden").checked;
+  var saveDisabledFieldsCheckBox = document.getElementById("save-disabled").checked;
   var ignoreBlankCheckBox       = document.getElementById("ignore-blank").checked;
   var ignoreErrorsCheckBox      = document.getElementById("ignore-errors").checked;
   var checklocationsCheckBox    = document.getElementById("check-locations").checked;
@@ -24,6 +25,7 @@ function savePrefs(){
   // Save 'em danno
   prefs.setBoolPref("formsaver.savepassword", passwordCheckBox);
   prefs.setBoolPref("formsaver.savehiddenfields", saveHiddenFieldsCheckBox);
+  prefs.setBoolPref("formsaver.savedisabledfields", saveDisabledFieldsCheckBox);
   prefs.setBoolPref("formsaver.ignoreblankfields", ignoreBlankCheckBox);
   prefs.setBoolPref("formsaver.ignorerrors", ignoreErrorsCheckBox);
   prefs.setBoolPref("formsaver.checklocationhref", checklocationsCheckBox);
@@ -47,6 +49,11 @@ function onLoadFormsaver(){
   // Check if "save hidden fields" pref is set, otherwise set default value
   if (prefs.getPrefType("formsaver.savehiddenfields") == prefs.PREF_BOOL){
     document.getElementById("save-hidden").checked = prefs.getBoolPref("formsaver.savehiddenfields");
+  }
+  
+  // Check if "save disabled fields" pref is set, otherwise set default value
+  if (prefs.getPrefType("formsaver.savedisabledfields") == prefs.PREF_BOOL){
+    document.getElementById("save-disabled").checked = prefs.getBoolPref("formsaver.savedisabledfields");
   }
   
   // Check if "ignore blank fields" pref is set, otherwise set default value
