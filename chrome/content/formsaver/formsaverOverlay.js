@@ -108,6 +108,11 @@ function createMyBookmarklet(bookmarkName){
     var saveHiddenFields = prefs.getBoolPref("formsaver.savehiddenfields");
   }
   
+  // Check if "save disabled fields" pref is set, otherwise the default is false
+  if (prefs.getPrefType("formsaver.savedisabledfields") == prefs.PREF_BOOL){
+    var savedisabledFields = prefs.getBoolPref("formsaver.savedisabledfields");
+  }
+  
 //*************************************************
 //* HERE WE'RE DEFINING OUR VARIABLES
 //*************************************************
@@ -205,6 +210,13 @@ function createMyBookmarklet(bookmarkName){
             var ignoreBlank = false;
   				}
   			
+				// Ignore disabled fields
+				if( e.disabled || e.readOnly ) {
+					if(!savedisabledFields) {
+						continue;
+					}
+				}
+
     			// Ignore hidden values
     			if( elementType == 'hidden' ){
     			
